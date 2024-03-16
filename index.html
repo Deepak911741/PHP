@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+    <script>
+        function validateForm() {
+            var name = document.forms["registrationForm"]["name"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var phone = document.forms["registrationForm"]["phone"].value;
+            var address = document.forms["registrationForm"]["address"].value;
+            
+            if (name == "" || email == "" || phone == "" || address == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Employee Registration</h2>
+    <form name="registrationForm" action="process.php" onsubmit="return validateForm()" method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name"><br>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br>
+        <label>Phone:</label><br>
+        <input type="text" name="phone"><br>
+        <label>Address:</label><br>
+        <textarea name="address"></textarea><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
